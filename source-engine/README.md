@@ -5,4 +5,4 @@ with Valve's Source Engine assets and software.
 These scripts heavily rely on external tools,
 so keep that in mind.
 
-- [Server Watcher](srcds-manager.ps1)
+- [Server Watcher](scripts/srcds-manager.ps1)
