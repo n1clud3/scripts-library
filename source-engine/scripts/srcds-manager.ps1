@@ -25,21 +25,23 @@ function Add-Argument {
 # Editable section
 $SleepTime = 5 # How long should the script sleep after server shutdown, in seconds.
 
-[string[]]$srcdsArgumentList
-
 # You can add any parameter you want pass to srcds.exe her using the following structure.
+[string[]]$srcdsArgumentList
 $srcdsArgumentList = Add-Argument $srcdsArgumentList '-secure'
 $srcdsArgumentList = Add-Argument $srcdsArgumentList '-console'
 $srcdsArgumentList = Add-Argument $srcdsArgumentList '-port' '27015' # Server port
 $srcdsArgumentList = Add-Argument $srcdsArgumentList '-game' 'cstrike' # Game name
-$srcdsArgumentList = Add-Argument $srcdsArgumentList '+hostname' 'Counter-Strike Source Dedicated Server' # Server name
+$srcdsArgumentList = Add-Argument $srcdsArgumentList '+hostname' '"Counter-Strike Source Dedicated Server"' # Server name
 $srcdsArgumentList = Add-Argument $srcdsArgumentList '+maxplayers' '16' # Max players
 $srcdsArgumentList = Add-Argument $srcdsArgumentList '+sv_setsteamaccount' 'xxx' # Steam GSLT Token. Get it from https://steamcommunity.com/dev/managegameservers
 $srcdsArgumentList = Add-Argument $srcdsArgumentList '+map' 'cs_office' # Start map
+$srcdsArgumentList = Add-Argument $srcdsArgumentList '+sv_password' 'password' # Server password
+
+$PrintSuppliedArgs = $true # Print supplied arguments on script startup
 # Editable section end
 
 Write-Host 'Source Dedicated Server Manager'
-Write-Host "Arguments supplied: $srcdsArgumentList"
+if ($PrintSuppliedArgs) { Write-Host "Arguments supplied: $srcdsArgumentList" }
 while ($true) {
     Write-Host 'Starting server ...'
     $Process = Start-Process -PassThru -FilePath 'srcds.exe' -ArgumentList $srcdsArgumentList
