@@ -1,13 +1,19 @@
 <#
-Name: srcds manager
-Author: n1clude
-Description: A startup script that sets parameters for Source Dedicated Server
+.SYNOPSIS
+    A startup script that sets parameters for Source Dedicated Server
     and automatically restarts it on crash or shutdown.
-Usage: Put the script in the same directory as srcds.exe.
-    Then edit the fields in editable section and run the script.
-Dependencies: PowerShell 5.1, Source Dedicated Server.
+.DESCRIPTION
+    Usage: Put the script in the same directory as srcds.exe.
+        Afterwards edit the fields in editable section and run the script.
+    Dependencies: PowerShell 5.1, Source Dedicated Server.
+.NOTES
+    Author: https://github.com/n1clud3
 #>
 
+<#
+.SYNOPSIS
+    Add an argument to the argument list.
+#>
 function Add-Argument {
     process {
         if ($args[2]) {

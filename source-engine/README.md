@@ -2,7 +2,7 @@
 
 This directory contains scripts that help you work
 with Valve's Source Engine assets and software.
-These scripts heavily rely on external tools,
-so keep that in mind.
 
-- [Server Watcher](scripts/srcds-manager.ps1)
+- [Manage-SourceDS](Manage-SourceDS.ps1) - Source Dedicated Server Watcher.
+Written for Garry's Mod, but should work with every Source game. Requires script
+editing for configuration.
