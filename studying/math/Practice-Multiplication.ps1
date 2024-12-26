@@ -1,3 +1,11 @@
+<#
+.SYNOPSIS
+    A PowerShell cmdlet made to help practice quick multiplication of small
+    numbers using only your brain, without relying on a calculator.
+.NOTES
+    Author: https://github.com/n1clud3
+#>
+
 param (
     # Minimum range of number multiplications to practice
     [Parameter(Mandatory=$true, Position=0)]
