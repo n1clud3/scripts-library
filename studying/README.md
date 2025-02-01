@@ -1,7 +1,11 @@
 # Scripts for studying
 
 This directory contains scripts I created to assist with my university studies.
-Whenever I faced a challenge, I developed a tool to tackle it :sunglasses:
+
+## General
+
+- [Random List Item Selector](general/select-random-item.c) - select a random item
+from a given TXT list.
 
 ## Math
 

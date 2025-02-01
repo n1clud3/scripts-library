@@ -1,6 +1,6 @@
-# Powershell library
+# Scripts library
 
-My repo for storing PowerShell scripts and cmdlets.
+My repo for storing scripts and various tools.
 You are absolutely free to use and modify these scripts,
 as stated in the [UNLICENSE](UNLICENSE.md) file.
 
