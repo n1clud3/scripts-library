@@ -10,11 +10,18 @@
 #include <stdlib.h>
 #include <stdint.h>
 #include <string.h>
+
+// Use windows lib on Windows for better random number generator
+#ifdef _WIN32
+#include <windows.h>
+#else
 #include <time.h>
+#endif
 
 #define MAX_LINE_LENGTH 256
 
 int main(int argc, char *argv[])
+
 {
     if (argc != 2)
     {
@@ -23,7 +30,14 @@ int main(int argc, char *argv[])
         return 1;
     }
 
+    // Initialize the random number generator
+    #ifdef _WIN32
+    LARGE_INTEGER counter;
+    QueryPerformanceCounter(&counter);
+    srand((uint32_t) counter.QuadPart);
+    #else
     srand(time(NULL));
+    #endif
 
     // Open the file
     FILE *file = fopen(argv[1], "r");
